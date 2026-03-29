@@ -1,1 +1,4 @@
+fastcrc==0.3.5
 PySide6==6.11.0
+pytest==9.0.2
+Requests==2.33.0

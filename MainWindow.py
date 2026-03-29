@@ -1,4 +1,4 @@
-from rkg_py import rkg
+from py_rkg import rkg
 from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtCore import Signal
 import os

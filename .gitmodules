@@ -1,0 +1,3 @@
+[submodule "py_rkg"]
+	path = py_rkg
+	url = git@github.com:Hibyehello/py_rkg.git

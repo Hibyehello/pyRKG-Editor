@@ -20,4 +20,9 @@ class MiiEditorWidget(QtWidgets.QWidget):
         self.image_lbl = QtWidgets.QLabel(self)
         self.image_lbl.setPixmap(self.mii_image)
 
+        self.name_lbl = QtWidgets.QLabel(self, text=self.mii_data.name.strip('\x00'))
+        self.name_lbl.setStyleSheet("font-size: 24pt;")
+
+        self.layout.setContentsMargins(0, 0, 0, 0)
+        self.layout.addWidget(self.name_lbl, alignment=QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.layout.addWidget(self.image_lbl, alignment=QtCore.Qt.AlignmentFlag.AlignHCenter)

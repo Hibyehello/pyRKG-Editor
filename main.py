@@ -6,7 +6,6 @@ from PySide6 import QtWidgets
 def main():
     app = QtWidgets.QApplication([])
     widget = MainWidget()
-    # widget.resize(800, 600)
     widget.show()
 
     widget.setWindowTitle("PyRKG Editor")

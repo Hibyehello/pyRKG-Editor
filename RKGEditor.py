@@ -170,5 +170,3 @@ class RkgEditorWidget(QtWidgets.QWidget):
             self.layout.addLayout(splits_layout)
 
             self.setLayout(self.layout)
-
-

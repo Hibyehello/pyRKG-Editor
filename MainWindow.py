@@ -40,13 +40,16 @@ class MainWidget(QtWidgets.QMainWindow):
         if self.file_path == '':
             return
         with open(self.file_path, "rb") as file:
-            self.rkg_header.parse_file(file)
-        if self.rkg_header.ID == 'RKGD':
-            self.file_chosen.emit()
-        else:
-            QtWidgets.QMessageBox.critical(self,
-                                           self.tr("Error!"),
-                                           self.tr("That is not a valid RKG File!"))
+            length = os.fstat(file.fileno()).st_size
+            if length >= 0x88:
+                self.rkg_header.parse_file(file)
+                if self.rkg_header.ID == 'RKGD':
+                    self.file_chosen.emit()
+                    return
+
+        QtWidgets.QMessageBox.critical(self,
+                                        self.tr("Error!"),
+                                        self.tr("That is not a valid RKG File!"))
 
     @QtCore.Slot()
     def getOutputRKG(self):
